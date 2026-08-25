@@ -1,0 +1,32 @@
+class NumMatrix {
+
+    int rowlength;
+    int collength;
+    int [][] matrix;
+
+    public NumMatrix(int[][] matrix) {
+     if (matrix == null || matrix.length == 0) return; 
+     this.matrix = matrix;
+    rowlength = this.matrix.length;
+    collength = this.matrix[0].length;
+    
+    }
+    
+    public int sumRegion(int row1, int col1, int row2, int col2) {
+        int sum = 0;
+        for(int i = row1; i <= row2 ; i++)
+        {
+            for(int j = col1; j <= col2 ; j++)
+            {
+                sum = sum+matrix[i][j];
+            }
+        }
+        return sum;
+    }
+}
+
+/**
+ * Your NumMatrix object will be instantiated and called as such:
+ * NumMatrix obj = new NumMatrix(matrix);
+ * int param_1 = obj.sumRegion(row1,col1,row2,col2);
+ */
